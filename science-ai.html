@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذكاء اصطناعي لأسئلة العلوم</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* لون خلفية فاتح */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4caf50; /* لون أخضر جميل */
+            color: white;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        main .container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff; /* لون خلفية بيضاء */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .send-btn {
+            background-color: #4caf50; /* لون الزر */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .send-btn:hover {
+            background-color: #45a049; /* لون عند التحويم */
+        }
+
+        #response {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>اسألني عن العلوم!</h1>
+    </header>
+    <main>
+        <div class="container">
+            <textarea id="question" placeholder="اكتب سؤالك هنا..." rows="4" cols="50"></textarea><br>
+            <button class="send-btn" onclick="askAI()">إرسال</button>
+            <p id="response"></p>
+        </div>
+    </main>
+    <script>
+        async function askAI() {
+            const question = document.getElementById('question').value;
+            document.getElementById('response').innerText = "جاري التحميل...";
+
+            try {
+                const response = await fetch('https://api.example.com/ask-ai', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer YOUR_API_KEY_HERE'
+                    },
+                    body: JSON.stringify({ prompt: question })
+                });
+
+                const data = await response.json();
+                document.getElementById('response').innerText = data.answer;
+            } catch (error) {
+                document.getElementById('response').innerText = "حدث خطأ، الرجاء المحاولة مرة أخرى.";
+            }
+        }
+    </script>
+</body>
+</html>

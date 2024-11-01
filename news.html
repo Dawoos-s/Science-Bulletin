@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أخبار العلوم</title>
+    <style>
+        /* تنسيق عام */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #00796b; /* لون أخضر داكن يوحي بالطبيعة والعلم */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #004d40;
+        }
+
+        /* شريط الأخبار المتحرك */
+        .news-ticker {
+            background-color: #009688; /* لون أخضر فاتح لإبراز الشريط */
+            color: white;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            padding: 25px; /* زيادة مساحة الشريط */
+            margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.3em; /* تكبير حجم النص */
+        }
+
+        .news-ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            position: absolute;
+            will-change: transform;
+            animation: ticker 12s linear infinite;
+            right: 100%;
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .news-ticker-content span {
+            padding: 0 2rem;
+            white-space: nowrap;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #00796b;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        section ul li {
+            font-size: 1.1em;
+            color: #333;
+            background-color: #e0f2f1;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>أخبار مادة العلوم</h1>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="news.html">أخبار المادة</a>
+            <a href="gallery.html">ألبوم الصور</a>
+            <a href="contact.html">التواصل</a>
+        </nav>
+    </header>
+
+    <!-- شريط الأخبار المتحرك -->
+    <div class="news-ticker">
+        <div class="news-ticker-content">
+            <span>تم تحديث المناهج الدراسية لعام 2024 | </span>
+            <span>المسابقة العلمية تبدأ الشهر المقبل | </span>
+            <span>اجتماع أولياء الأمور لمناقشة المستجدات التعليمية | </span>
+            <span>إطلاق برنامج جديد للتجارب العلمية في المدرسة | </span>
+        </div>
+    </div>
+
+    <section>
+        <h2>أحدث الأخبار</h2>
+        <p>هنا ستجد أحدث الأخبار المتعلقة بمادة العلوم. تابع أحدث التحديثات والفعاليات التي تخص المادة.</p>
+        <ul>
+            <li>تم تحديث المناهج الدراسية لعام 2024.</li>
+            <li>المسابقة العلمية تبدأ الشهر المقبل.</li>
+            <li>اجتماع أولياء الأمور لمناقشة المستجدات التعليمية.</li>
+            <li>إطلاق برنامج جديد للتجارب العلمية في المدرسة.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>حقوق النشر &copy; 2024 نشرة العلوم</p>
+    </footer>
+</body>
+</html>
